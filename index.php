@@ -14,14 +14,16 @@
 		
 			<div class="content">
 			
-				<div class="banner">
-					<img src="images/banner.png" alt="Banner" width="1080" height="150">
-				</div>
+			
 				
 				<div class="navigation">
 					<?php 
 						include ("navigation.php");
 					?>
+				</div>
+				
+				<div class="banner">
+					<img src="images/banner.png" alt="Banner" width="1080" height="150">
 				</div>
 			
 				<div class="form">
