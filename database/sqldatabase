@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: localhost
--- Genereertijd: 26 nov 2013 om 10:00
+-- Genereertijd: 03 dec 2013 om 09:46
 -- Serverversie: 5.6.12-log
 -- PHP-versie: 5.4.12
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Databank: `am1a-fotosjaak`
+-- Databank: `fotosjaak`
 --
-CREATE DATABASE IF NOT EXISTS `am1a-fotosjaak` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `am1a-fotosjaak`;
+CREATE DATABASE IF NOT EXISTS `fotosjaak` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `fotosjaak`;
 
 -- --------------------------------------------------------
 
@@ -59,7 +59,18 @@ CREATE TABLE IF NOT EXISTS `login` (
   `activated` enum('yes','no') NOT NULL DEFAULT 'no',
   `activationdate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Gegevens worden uitgevoerd voor tabel `login`
+--
+
+INSERT INTO `login` (`id`, `email`, `password`, `userrole`, `activated`, `activationdate`) VALUES
+(1, 'customer@gmail.com', 'geheim', 'customer', 'no', '2013-12-02 00:00:00'),
+(2, 'administrator@gmail.com', 'geheim', 'administrator', 'no', '2013-12-03 08:16:00'),
+(3, 'root@gmail.com', 'geheim', 'root', 'no', '2013-12-04 00:00:00'),
+(4, 'photographer@gmail.com', 'geheim', 'customer', 'no', '2013-12-05 12:20:28'),
+(5, 'developer@gmail.com', 'geheim', 'developer', 'yes', '2013-12-15 00:00:00');
 
 -- --------------------------------------------------------
 
