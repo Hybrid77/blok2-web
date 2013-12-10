@@ -1,135 +1,89 @@
-h1
+*
 {
-font-size: 20px;
+	padding:0px;
+	margin:0px;
 }
 
-h2
+body
 {
-font-size: 20px;
-text-align: center;
+	background-color:RGB(220, 220, 220);
+	color:RGBA(255, 255, 255, 1);
+	font-size:1.1em;
+	font-family:Comic Sans MS, Arial;
+	border:0px solid green;
+	padding:1em;
+	margin:10px;
 }
 
-body{
-	height: 1000px;
-	font-family: Arial;
-	margin: 0 auto;
-
-}
-table#download td, th, tr
+div#container
 {
-width:400px;
-border:1px solid black;
-text-align: center;
+	background-color:grey;
+	width:745px;
+	margin:0px auto;
+	border-radius:25px;
 }
 
-table#download caption
+div#banner
 {
-font-size: 20px;
+	background-image:url("../images/jumbo-banner.jpg");
+	background-repeat:no-repeat;
+	background-color:orange;
+	height:170px;
+	border-radius:25px;
 }
 
-.banner{
-	border-radius: 15px;
-	
+div#footer
+{
+	background-color:orange;
+	text-align:center;
 }
 
-.changepassword{
-float: right; 
-
+div#content
+{
+	min-height:300px;
+	border:0px solid white;
+	padding:10px;
+	position:relative;
 }
 
-
-
-.content{
-width: 1080px;
-margin: 20px auto 0px auto;
-background-color: #FFFFFF;
-border: 1px solid #000000;
-
+div#link 
+{
+	border:3px solid white;
+	position:absolute;
+	left:-120px;
+	background-color:grey;
+	border-radius:20px;
+	padding:0.5em;
 }
 
-.music{
-float: right;
-text-align: right;
-padding: 10px;
+div#link ul
+{
+	list-style-type:none;
 }
 
-.navigation{
-
-font-size:19px;
-width: 1050	px;
-text-align: center;
-margin: 4px; 
-padding: 10px;
-background-color: #990000;
-border-style:solid;
-border-width:1px;
-
-}
-.downloads{
-float: center;
-text-align: right;
+a
+{
+	color:white;
+	text-decoration:none;
 }
 
-
-
-.form{
-font-size:15px;
-width: 435px;
-height:auto;
-margin: 4px; 
-float: right;
-background-color: #990000;
-text-align: left;
-padding: 10px;
-border-style:solid;
-border-width:1px;
+table.simple 
+{
+	border-collapse:collapse;
+	margin:0px auto;	
 }
 
-
-.tekst{
-color: #000000;
-font-size:14px;
-width: 585px;
-height:500px ;
-margin: 4px; 
-text-align: left;
-float: left;
-background-color: #990000; 
-padding: 10px;
-border-style:solid;
-border-width:1px;
+table.simple  th, td
+{
+	border:1px solid white;
+	text-align:center;
+	padding:0.3em;
+	background-color:RGB(180,180,180);
+	color:black;
 }
 
-.footer{
-font-size:14px;
-width: 989px;
-text-align: right;
-padding: 10px;
-padding-right: 80px;
-height: 18px;
-background-color: #990000;
-border-style:solid;
-border-width:1px;
-margin-top: 800px;
+table.simple caption
+{
+	background-color:orange;
 }
 
-.tekstcontact{
-background-color: #990000;
-width: 1078px;
-text-align: center;
-float: right;
-margin-right: 10px;
-margin-top: 5px;
-border-style: solid;
-border-width: 1px;
-}
-
-.succes{
-font-size:15px;
-background-color: #990000;
-text-align: center;
-padding: 10px;
-margin-top: 40px;
-border-style:solid;
-border-width:1px;
-}

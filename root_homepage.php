@@ -1,14 +1,7 @@
 <?php 
-	$userrole = array('admin','customer');
-	include ("security.php"); 
+	$userrole = array('root');
+	include("security.php"); 
 ?>
-
-<h3> Rootpage <h3/>
-
-<?php
-if (isset($_SESSION['userrole']))
-{
-echo "<a href='index.php?content=change_passwordform'>Change pasword.</a>";
-
-}
-?>
+<h3>Root homepage</h3>
+Uw id is: <?php echo $_SESSION['id']; ?><br>
+Uw gebruikersrol is: <?php echo $_SESSION['userrole']; ?>

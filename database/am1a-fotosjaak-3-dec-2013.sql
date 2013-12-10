@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: localhost
--- Genereertijd: 25 nov 2013 om 14:07
+-- Genereertijd: 03 dec 2013 om 09:46
 -- Serverversie: 5.6.12-log
 -- PHP-versie: 5.4.12
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Databank: `am1a`
+-- Databank: `am1a-fotosjaak`
 --
 CREATE DATABASE IF NOT EXISTS `am1a-fotosjaak` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `am1a-fotosjaak`;
@@ -44,6 +44,54 @@ CREATE TABLE IF NOT EXISTS `faq` (
 INSERT INTO `faq` (`id`, `question_english`, `question_dutch`, `answer_english`, `answer_dutch`) VALUES
 (1, 'Is this game hard to play?', 'Is dit een moeilijk spel om te spelen?', 'Yes, this game is very hard to crack.', 'Ja, dit spel is mega moeilijk.'),
 (2, 'When is this game completed?', 'Wanneer heb je dit spel uitgespeeld?', 'The game is a never ending experience. Full of joy and pleasure.', 'De game komt nooit ten einde. Het maakt je tot een beter en gelukkiger mens.');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `login`
+--
+
+CREATE TABLE IF NOT EXISTS `login` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(12) NOT NULL,
+  `userrole` enum('customer','root','administrator','photographer','developer') NOT NULL DEFAULT 'customer',
+  `activated` enum('yes','no') NOT NULL DEFAULT 'no',
+  `activationdate` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Gegevens worden uitgevoerd voor tabel `login`
+--
+
+INSERT INTO `login` (`id`, `email`, `password`, `userrole`, `activated`, `activationdate`) VALUES
+(1, 'customer@gmail.com', 'geheim', 'customer', 'no', '2013-12-02 00:00:00'),
+(2, 'administrator@gmail.com', 'geheim', 'administrator', 'no', '2013-12-03 08:16:00'),
+(3, 'root@gmail.com', 'geheim', 'root', 'no', '2013-12-04 00:00:00'),
+(4, 'photographer@gmail.com', 'geheim', 'customer', 'no', '2013-12-05 12:20:28'),
+(5, 'developer@gmail.com', 'geheim', 'developer', 'yes', '2013-12-15 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(10) unsigned NOT NULL,
+  `firstname` varchar(200) NOT NULL,
+  `infix` varchar(50) NOT NULL,
+  `surname` varchar(200) NOT NULL,
+  `address` varchar(200) NOT NULL,
+  `addressnumber` varchar(10) NOT NULL,
+  `city` varchar(200) NOT NULL,
+  `zipcode` varchar(6) NOT NULL,
+  `country` varchar(300) NOT NULL,
+  `telephonenumber` varchar(10) NOT NULL,
+  `mobilephonenumber` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 

@@ -1,29 +1,32 @@
-<?php 
-
-?>
-<table id='download'>
+<table class='simple'>
 	<caption>Downloads</caption>
 	<tr>
-		
-		<th>Versie</th>
-		<th>GameDownload</th>
-		<th>Manual Ned/Eng</th>
+		<th>screenshot</th>
+		<th>spelnaam</th>
+		<th>download game</th>
+		<th>download manual</th>	
 	</tr>
 	<tr>
-		<td>Hybrid77 Alpha 1.1.7</td>
 		<td>
-			<a href='./downloads/Game Hybrid.rar'>
-				<img src='./images/download.png' alt='download game' width='60' />
-		</a>	
+			<img src='./images/prtscGame.png' 
+				 alt='printscreen game'
+				 width='200' />
+		</td>
+		<td>
+			EvilBabies
+		</td>
+		<td>
+			<a href='./downloads/EvilBabies.zip'>
+				<img src='./images/download.png' alt='download game' />
+			</a>
 		</td>
 		<td>
 			<a href='./downloads/HandleidingNed.doc'>
-				<img src='./images/ned_vlag.png' alt='download manual' width='60' />
-		</a>
-		<a href='./downloads/ManualEng.doc'>
-				<img src='./images/eng_vlag.png' alt='download manual' width='60' />	
+				<img src='./images/ned_vlag.png' alt='download manual ned' />
+			</a>
+			<a href='./downloads/ManualEng.doc'>
+				<img src='./images/eng_vlag.png' alt='download manual eng' />
+			</a>
 		</td>
-
-		
 	</tr>
 </table>
