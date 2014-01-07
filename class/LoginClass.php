@@ -235,7 +235,7 @@
 					   $post_array['surname']."</b></p>";
 			$message .= "Voor u kunt inloggen moet uw account nog worden geactiveerd.<br>";
 			$message .= "Klik hiervoor op de onderstaande link<br><br><br>";
-			$message .= "<u><a href='http://localhost/2013-2014/Blok2/AM1A/fotosjaak-am1a/index.php?content=activation&email=".$post_array['email']."&password=".$password."'>Actievatie link.</a></u><br><br>";
+			$message .= "<u><a href='http://localhost/blok%202/Fotosjaak/activation.php?content=activation&email=".$post_array['email']."&password=".$password."'>Actievatie link.</a></u><br><br>";
 			$message .= "Met vriendelijke groet,<br>";
 			$message .= "Sjaak de Vries<br>";
 			$message .= "Uw fotograaf";	
