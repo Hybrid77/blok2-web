@@ -1,4 +1,27 @@
 <?php
+	require_once("class/LoginClass.php");
+	
+	if (LoginClass::check_if_email_exists($_POST['email']))
+	{
+		// Email bestaat al terugsturen naar de registratiepagina
+		echo "Het ingevulde emailadres bestaat al,<br>
+			  gebruik een ander emailadres. U wordt doorgestuurd<br>
+			  naar het registratieformulier";
+		header("refresh:5;url=index.php?content=register_form");
+	}
+	else 
+	{
+		LoginClass::insert_into_loginClass($_POST);	
+			
+		// Schrijf weg naar de database	
+		echo "U bent succesvol geregistreerd.U ontvangt een mail met daarin een<br>
+			  activatielink in uw mailbox van het opgegeven emailadres.<br>
+			  Na het activeren van uw account kunt u inloggen met een<br>
+			  zelfgekozen wachtwoord";
+			  header("refresh:5;url=index.php?content=login_form");
+		
+	}
+	/*
 	//var_dump($_POST);
 	
 	//Hier wordt contact gemaakt met de mysql-server
@@ -45,5 +68,5 @@
 	
 	echo "De gegevens zijn succesvol geregistreerd. U wordt doorgestuurd naar de
 	registratiepagina";
-	header("refresh:4; url=index.php");
+	header("refresh:4; url=index.php");*/
 ?>

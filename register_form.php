@@ -23,8 +23,8 @@
 		</tr>
 		<tr>
 			<td>
-				<input type="text" name="street" />
-				<input type="number" min="0" max="18923" name="house_number"/>
+				<input type="text" name="address" />
+				<input type="number" min="0" max="18923" name="addressnumber"/>
 			</td>
 		</tr>
 		<tr>
@@ -40,63 +40,15 @@
 		</tr>
 		<tr>
 			<td>
-				<input type="text" name="zip_code" />
+				<input type="text" name="zipcode" />
 			</td>
 		</tr>
 		<tr>
-			<td>Geboortedatum: </td>
+			<td>Land: </td>
 		</tr>
 		<tr>
 			<td>
-			  <input type="date"
-					 name="birthday" 
-					 min="1887-01-01" 
-					 max="<?php echo Date('Y-m-d'); ?>" required/>
-			</td>
-		</tr>
-		<tr>
-			<td>Geslacht: </td>
-		</tr>
-		<tr>
-			<td>
-			  <input type="radio" name="sex" value="male" required>Man<br>
-			  <input type="radio" name="sex" value="female" required>Vrouw
-			</td>
-		</tr>
-		<tr>
-			<td>Burgerlijke staat: </td>
-		</tr>
-		<tr>
-			<td>
-			  <input type="radio" name="marital_status" value="married" required>Getrouwd<br>
-			  <input type="radio" name="marital_status" value="single" required>Niet getrouwd
-			</td>
-		</tr>
-		<tr>
-			<td>Favoriete game genre: </td>
-		</tr>
-		<tr>
-			<td>
-				<select name="favo_genre">
-					<option value='not_selected'>---</option>
-					<option value='rpg'>rpg</option>
-					<option value='adventure'>adventure</option>
-					<option value='horror'>horror</option>
-					<option value='shooter'>shooter</option>
-					<option value='mmorpg'>mmorpg</option>
-					<option value='casual'>casual</option>
-					<option value='educational'>educational</option>
-					<option value='sport'>sport</option>
-					<option value='simulation'>simulation</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td>Favoriete game</td>
-		</tr>
-		<tr>				
-			<td>
-				<input type='text' name='favo_game' />
+				<input type="text" name="country" />
 			</td>
 		</tr>
 		<tr>
@@ -108,13 +60,21 @@
 			</td>
 		</tr>
 		<tr>
-			<td>password</td>
+			<td>telefoonnummer vast: </td>
 		</tr>
-		<tr>				
+		<tr>
 			<td>
-				<input type='password' name='password' />
+				<input type="text" name="telephonenumber" />
 			</td>
 		</tr>
+		<tr>
+			<td>mobiel nummer: </td>
+		</tr>
+		<tr>
+			<td>
+				<input type="text" name="mobilephonenumber" />
+			</td>
+		</tr>		
 		<tr>
 			<td><input type="submit" name="submit" value="verstuur" /></td>
 		</tr>

@@ -1,5 +1,6 @@
 <?php
 	require_once("MySqlDatabaseClass.php");
+	require_once("UserClass.php");
 
 	// Hieronder de classdefinitie van de LoginClass
 	class LoginClass
@@ -112,9 +113,116 @@
 					  FROM `login`
 					  WHERE `email` = '".$email."'
 					  AND `password` = '".$password."'";
+			//echo $query; exit();
 			$loginClassObjectInArray = self::find_by_sql($query);	
-			$loginClassObject = array_shift($loginClassObjectInArray);
-			return $loginClassObject;
+			return $loginClassObject = array_shift($loginClassObjectInArray);
 		}
+		
+		public static function check_if_account_is_activated($email,
+															 $password)
+		{
+			// Maak een query die het record selecteerd van degene die
+			// inlogd
+			$query = "SELECT	*
+					  FROM		`login`
+					  WHERE		`email`		=	'".$email."'
+					  AND		`password`	=	'".$password."'";
+				
+			// Vuur de query af op de database met de static method
+			// find_by_sql($query)
+			$object_array = self::find_by_sql($query);
+			$loginClassObject = array_shift($object_array);
+			if ( $loginClassObject->activated == 'yes')
+			{
+				return true;
+			}
+			else 
+			{
+				return false;
+			}
+		}
+		
+		public static function check_if_email_exists($email)
+		{
+			global $database;	
+				
+			// Zet hier je commentaar
+			$query = "SELECT	*
+					  FROM		`login`
+					  WHERE		`email`	=	'".$email."'";
+			
+			// Zet hier je commentaar
+			$result = $database->fire_query($query);
+			
+			// Zet hier je commentaar
+			if (mysql_num_rows($result) > 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+			
+			// Ternary operator variabele 
+			// (vergelijking) ? waarde als waar : waarde als niet waar
+			// return (mysql_num_rows($result) > 0) ? true : false;
+		}
+		
+		public static function insert_into_loginClass($post_array)
+		{
+			global $database;
+						
+			$date = date("Y-m-d H:i:s");
+			
+			$tmp_password = $date.$post_array['email'];
+			
+			$hash_from_tmp_password = MD5($tmp_password);
+			
+			$query = "INSERT INTO	`login` (`id`,
+											 `email`,
+											 `password`,
+											 `userrole`,
+											 `activated`,
+											 `activationdate`)
+					  VALUES				(NULL,
+					  						 '".$post_array['email']."',
+					  						 '".$hash_from_tmp_password."',
+					  						 'customer',
+					  						 'no',
+					  						 '".$date."')";
+			$database->fire_query($query);
+			
+			$id = mysql_insert_id();
+			
+			UserClass::insert_into_userClass($post_array, $id);
+			self::send_activation_email($post_array, $hash_from_tmp_password);
+		}
+		
+		public static function send_activation_email($post_array, $password)
+		{
+			$to = $post_array['email'];
+			$subject = "Activatie website FotoSjaak";
+			$message = "Geachte heer/mevrouw ".
+					   $post_array['firstname']." ".
+					   $post_array['infix']." ".
+					   $post_array['surname']."\r\n";
+			$message .= "Voor u kunt inloggen moet uw account nog worden geactiveerd.\r\n";
+			$message .= "Klik hiervoor op de onderstaande link\r\n";
+			$message .= "http://localhost/2013-2014/Blok2/AM1A/fotosjaak-am1a/index.php?content=activation&email=".$post_array['email']."&password=".$password."\r\n";
+			$message .= "Met vriendelijke groet,\r\n";
+			$message .= "Sjaak de Vries\r\n";
+			$message .= "Uw fotograaf";	
+			
+			
+			$headers  = "From: info@fotosjaak.nl\r\n";
+			$headers .=	"Reply-To: info@fotosjaak.nl\r\n";
+			$headers .= "Cc: sjaak@fotosjaak.nl\r\n";
+			$headers .= "Bcc: admin@fotosjaak.nl\r\n";
+			$headers .= "X-mailer: PHP/".phpversion()."\r\n";
+			$headers .= "MIME-version: 1.0\r\n";
+			$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+			mail($to, $subject, $message, $headers);
+		}											
 	}
 ?>
