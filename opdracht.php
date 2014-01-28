@@ -5,6 +5,8 @@
 
 		if ( isset($_POST['submit']))
 		{
+				
+			OrderClass :: insert_into_order($_POST);
 			//var_dump($_POST);
 			
 			echo "Uw geplaatste opdracht is correct ontvangen. U krijgt een<br>

@@ -1,0 +1,89 @@
+*
+{
+	padding:0px;
+	margin:0px;
+}
+
+body
+{
+	background-color:RGB(220, 220, 220);
+	color:RGBA(255, 255, 255, 1);
+	font-size:1.1em;
+	font-family:Comic Sans MS, Arial;
+	border:0px solid green;
+	padding:1em;
+	margin:10px;
+}
+
+div#container
+{
+	background-color:grey;
+	width:745px;
+	margin:0px auto;
+	border-radius:25px;
+}
+
+div#banner
+{
+	background-image:url("../images/fotojaak-banner.png");
+	background-repeat:no-repeat;
+	background-color:orange;
+	height:170px;
+	border-radius:25px;
+}
+
+div#footer
+{
+	background-color:orange;
+	text-align:center;
+}
+
+div#content
+{
+	min-height:300px;
+	border:0px solid white;
+	padding:10px;
+	position:relative;
+}
+
+div#link 
+{
+	border:3px solid white;
+	position:absolute;
+	left:-120px;
+	background-color:grey;
+	border-radius:20px;
+	padding:0.5em;
+}
+
+div#link ul
+{
+	list-style-type:none;
+}
+
+a
+{
+	color:white;
+	text-decoration:none;
+}
+
+table.simple 
+{
+	border-collapse:collapse;
+	margin:0px auto;	
+}
+
+table.simple  th, td
+{
+	border:1px solid white;
+	text-align:center;
+	padding:0.3em;
+	background-color:RGB(180,180,180);
+	color:black;
+}
+
+table.simple caption
+{
+	background-color:orange;
+}
+
