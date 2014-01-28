@@ -49,7 +49,10 @@
 					break;
 					case 'photographer':
 						header("location:index.php?content=photographer_homepage");
-					break;			
+					break;	
+					case 'coworker':
+						header("location:index.php?content=coworker_homepage");
+					break;		
 				}
 			}
 			else
