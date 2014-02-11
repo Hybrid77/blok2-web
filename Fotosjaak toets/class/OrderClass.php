@@ -3,6 +3,7 @@
  require_once("class/UserClass.php");
  require_once("class/LoginClass.php");
  
+ 
  class OrderClass
  {
  	//Fields
@@ -153,6 +154,37 @@
 				  SET `confirmed` = 'yes'
 				  WHERE order_id = '".$order_id."'";
 		$database->fire_query($query);
+	}
+	
+	public static function find_orders_users()
+	{
+		global $database;
+		// Maak een select query
+		$query = "SELECT * FROM `order`, `user`
+				  WHERE `order`.`user_id` = `user`.`id`
+				  ORDER BY `order`.`user_id`";
+		
+		// Vuur de query af op de database
+		$result = $database->fire_query($query);
+		
+		// Loop het result door met een while instructie
+		while ($rows = mysql_fetch_array($result))
+		{
+			echo "<tr>
+					<td>".$rows['id']."</td>
+					<td>".$rows['firstname']."</td>
+					<td>".$rows['infix']."</td>
+					<td>".$rows['surname']."</td>
+					<td>".$rows['order_id']."</td>
+					<td>".$rows['order_short']."</td>
+					<td>".$rows['deliverydate']."</td>
+					<td><a href='index.php?
+						content=upload_form&
+						user_id=".$rows['id']."&
+						order_id=".$rows['order_id']."'>up</a></td>			
+				  </tr>";			
+		}
+		
 	}
  }
 ?>
