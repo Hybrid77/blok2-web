@@ -42,7 +42,7 @@
 				break;
 				case 'photographer':
 					echo "<li>
-							<a href=''>pho-link</a>
+							<a href='index.php?content=upload'>upload</a>
 						  </li>";
 				break;		
 						
