@@ -6,6 +6,10 @@
 			Mijn eerste site
 		</title>
 		<link rel='stylesheet' type='text/css' href='./css/style.css'/>
+		
+		<!-- hier word de jquery bibliotheek toegevoegt aan de site -->
+		<script style='text/javascript' src='./jquery/jquiry-1.11.0.min.js'></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	</head>
 	<body >
 		<div id='container'>

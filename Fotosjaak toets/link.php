@@ -37,7 +37,7 @@
 						  </li>";
 				case 'developer':
 					echo "<li>
-							<a href=''>dev-link</a>
+							<a href='index.php?content=selectors'>selectors</a>
 						  </li>";
 				break;
 				case 'photographer':
@@ -61,6 +61,9 @@
 				  <li>
 					<a href='index.php?content=register_form'>registratie</a>
 				  </li>";
+				  echo "<li>
+							<a href='index.php?content=selectors'>selectors</a>
+						  </li>";
 		}
 	?>	
 </ul>
